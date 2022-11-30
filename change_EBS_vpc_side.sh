@@ -12,7 +12,7 @@ sudo growpart /dev/$MAIN_PARTITION_NAME2
 
 #Check and change filesystem
 
-FILESYSTEM_TYPE="$(df -PT | awk 'NR==2 {print $2}')"
+FILESYSTEM_TYPE="$(df -hT | awk 'NR==2 {print $2}')"
 #echo "this is filesystem type: $FILESYSTEM_TYPE "
 
 if [ "$FILESYSTEM_TYPE" == "ext4" ] || [ "$FILESYSTEM_TYPE" == "ext3" ] || [ "$FILESYSTEM_TYPE" == "ext2" ] ; then
