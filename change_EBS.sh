@@ -31,12 +31,12 @@ if [ "$ACCESS_ANSWER" == "key" ]; then
   read KEY_LOCATION
 #  echo $KEY_LOCATION
   scp -i $KEY_LOCATION vpc_side.sh $INSTANCE_USERNAME@$PUBLIC_IP:/tmp/
-  ssh -i $KEY_LOCATION -t $INSTANCE_USERNAME@$PUBLIC_IP "sudo -s bash /tmp/vpc_side.sh && rm /tmp/vpc_side.sh"
+  ssh -i $KEY_LOCATION -t $INSTANCE_USERNAME@$PUBLIC_IP "sudo -s bash /tmp/change_EBS_vpc_side.sh && rm /tmp/change_EBS_vpc_side.sh"
 elif [ "$ACCESS_ANSWER" == "password" ]; then
   echo "Enter password for copy scrypt on instance: "
   scp -i $KEY_LOCATION vpc_side.sh $INSTANCE_USERNAME@$PUBLIC_IP:/tmp/
   echo "Enter password for executing scrypt on instance: "
-  ssh -i $KEY_LOCATION -t $INSTANCE_USERNAME@$PUBLIC_IP "sudo -s bash /tmp/vpc_side.sh && rm /tmp/vpc_side.sh"
+  ssh -i $KEY_LOCATION -t $INSTANCE_USERNAME@$PUBLIC_IP "sudo -s bash /tmp/change_EBS_vpc_side.sh && rm /tmp/change_EBS_vpc_side.sh"
 #  echo $INSTANCE_PASSWORD
 else
   echo "Sorry, I dont understand, try again"
