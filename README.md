@@ -12,3 +12,5 @@ Change_EBS_vpc_side.sh - this script confirm changes of partition size and files
 This two scripts must be in same directory.
 
 For start just execute Change_EBS.sh
+
+To check if it works you can execute df -h on instance before and after executing script
